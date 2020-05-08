@@ -12,3 +12,5 @@ set_global_assignment -name VHDL_FILE pooyan_char_color_lut.vhd
 set_global_assignment -name VHDL_FILE pooyan_sound_board.vhd
 set_global_assignment -name VHDL_FILE pooyan.vhd
 set_global_assignment -name SYSTEMVERILOG_FILE "Arcade-Pooyan.sv"
+set_global_assignment -name VERILOG_FILE joydb9md.v
+set_global_assignment -name VERILOG_FILE joydb15.v
