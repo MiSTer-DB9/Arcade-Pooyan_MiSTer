@@ -11,6 +11,8 @@ set_global_assignment -name VHDL_FILE rtl/pooyan_palette.vhd
 set_global_assignment -name VHDL_FILE rtl/pooyan_char_color_lut.vhd
 set_global_assignment -name VHDL_FILE rtl/pooyan_sound_board.vhd
 set_global_assignment -name VHDL_FILE rtl/pooyan.vhd
+set_global_assignment -name VERILOG_FILE "rtl/hiscore.v"
+set_global_assignment -name VERILOG_FILE "rtl/pause.v"
 set_global_assignment -name SYSTEMVERILOG_FILE "Arcade-Pooyan.sv"
 set_global_assignment -name VERILOG_FILE joydb9md.v
 set_global_assignment -name VERILOG_FILE joydb15.v
