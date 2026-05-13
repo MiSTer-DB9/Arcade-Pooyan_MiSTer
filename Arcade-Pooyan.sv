@@ -58,6 +58,8 @@ module emu
 	input  [11:0] HDMI_WIDTH,
 	input  [11:0] HDMI_HEIGHT,
 	output        HDMI_FREEZE,
+	output        HDMI_BLACKOUT,
+	output        HDMI_BOB_DEINT,
 
 `ifdef MISTER_FB
 	// Use framebuffer in DDRAM
@@ -234,6 +236,8 @@ assign VGA_F1    = 0;
 assign VGA_SCALER= 0;
 //assign USER_OUT  = '1;
 assign LED_USER  = ioctl_download;
+assign HDMI_BLACKOUT = 0;
+assign HDMI_BOB_DEINT = 0;
 assign LED_DISK  = 0;
 assign LED_POWER = 0;
 assign BUTTONS   = 0;
@@ -252,6 +256,7 @@ localparam CONF_STR = {
 	"A.POOYAN;;",
 	"H0OJK,Aspect ratio,Original,Full Screen,[ARC1],[ARC2];",
 	"H0O2,Orientation,Vert,Horz;",
+	"O6,Flip,Off,On;",
 	"O35,Scandoubler Fx,None,HQ2x,CRT 25%,CRT 50%,CRT 75%;",
 	"-;",
 		// [MiSTer-DB9-Pro BEGIN] - Saturn-first joy_type (canonical bit notation)
@@ -487,6 +492,7 @@ pooyan pooyan
 	.sw(0),
 	
 	.pause(pause_cpu),
+	.vertical_flip(status[6]),
 	
 	.hs_address(hs_address),
 	.hs_data_out(hs_data_out),
